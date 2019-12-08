@@ -1,0 +1,138 @@
+<h2 class='header'>4.angular组件合成完整</h2>
+<li class="header">以下块为home组件</li>
+
+<h3>加载图片的基础方法</h3>
+<ol>
+    <h4>
+        <li>
+            首先查看src目录下angular.json文件assets配置是否为"src/assets"
+        </li>
+
+        <li># 静态方法： "
+            < img src="assets/文件名" />"
+        </li>
+        <li># 动态方法: .ts文件下的定类里定义 [变量名]= "assets/文件名"；<br> .html文件 "
+            < img [src]="[变量名]" />"
+        </li>
+    </h4>
+</ol>
+<hr>
+<h3>外部链接动态引用图片</h3>
+<img class="pic" [src]='picture' />
+
+<h3>循环数据 显示数据索引（key）</h3>
+
+<ul>
+    <li *ngFor="let item of list;let key=index;">
+        {{key}}-{{item.title}}
+    </li>
+</ul>
+<hr>
+<h3>条件判断语句 *ngIf (展示1，2引用同一变量)</h3>
+<h4>展示1</h4>
+<span *ngIf="collect">
+    <img src="assets/01.png" alt="收藏">
+</span>
+<br>
+<span *ngIf="!collect">
+    <img src="assets/02.png" alt="收藏">
+</span>
+
+<h4>展示2</h4>
+<div *ngIf="collect">
+    <span style="color: red;">红色</span>
+</div>
+
+<div *ngIf="!collect">
+    <span style="color:blue;">蓝色</span>
+</div>
+
+
+<h4>展示3</h4>
+<ul>
+    <li class=".header" *ngFor="let item of list;let key=index;">
+        <span *ngIf="key==1" class="header">{{key}}-{{item.title}}</span>
+        <span *ngIf="key!=1">{{key}}-{{item.title}}</span>
+    </li>
+</ul>
+<hr>
+<h3>条件判断语句 *ngswitch</h3>
+<h4>示例</h4>
+<span [ngSwitch]="orderStatus">
+    <p *ngSwitchCase="1">
+        表示已发货
+    </p>
+    <p *ngSwitchCase="2">
+        表示已收货
+    </p>
+    <p *ngSwitchCase="3">
+        收货已评价
+    </p>
+    <p *ngSwitchDefault>
+        表示无效
+    </p>
+</span>
+<hr>
+<h3 class="annotation">*ngIf *ngFor *ngswitch称为angular指令</h3>
+<hr>
+<h3>属性[ngClass][ngstyle]</h3>
+
+<div [ngClass]="{'annotation': true,'header':flase}">
+    ngClass演示1
+</div>
+
+<div [ngClass]="{'orange': flag,'cyan':!flag}">
+    ngClass演示2
+</div><br>
+
+<strong>循环数组，改变数组某元素样式</strong>
+<ul>
+    <li *ngFor="let item of arr;let key=index;" [ngClass]="{'red': key>=2,'orange':key<1,'cyan':key==1}">
+        {{item}}
+    </li>
+</ul>
+
+<div [ngStyle]="{'background-color': attr}">ngstyle演示1</div>
+<div [ngStyle]="{'color': 'blue'}">ngstyle演示2</div>
+
+
+
+<hr>
+<h3>管道</h3>
+<p>现在的时间是:{{today| date:'yyyy-MM-dd HH:mm:ss'}}</p>
+<br>
+<hr>
+<h3>事件</h3>
+<button (click)="run()">执行run方法</button>&nbsp;&ensp;
+<span (click)="onClick()">点我触发事件</span>
+<br>
+<button (click)="getdate()">获取变量数据</button>
+<br>
+<button (click)="changedate()">点我改变值</button>
+<span>{{title}}</span>
+<hr>
+<h3>表单事 件 事件对象</h3>
+<h4 style="color: rebeccapurple;">点击F12的console查看输入框的监听情况</h4>
+<h4>输入框1(keydown.key)</h4>&nbsp;
+<input type="text" (keydown)='keydown()'>&nbsp;
+<h4>输入框2(keydown监听回车)</h4>&nbsp;
+<input type="text" (keydown)='keydownevent($event)'>&nbsp;
+<h4>输入框3(keydown监听输入框值)</h4>&nbsp;
+<input type="text" (keyup)='keyup($event)'>
+<div>
+    <button (click)="setDate($event)">执行方法改变属性的数据</button>
+</div>
+<input (click)="setDate($event)" (keyup)="set($event)" name="" type="button" value="点击按钮">
+<hr>
+<h3>双向数据绑定 --MVVM 只针对表单</h3>
+
+<input type="text" [(ngModel)]='keywords'>
+<br>
+{{keywords}}
+<br>
+<br>
+<button (click)="changeKey()">改變keywords的值</button>
+<br>
+<br>
+<button (click)="getKey()">獲取keywords的值</button>
+
