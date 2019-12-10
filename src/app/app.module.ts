@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { NewsComponent } from './components/news/news.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormComponent } from './components/form/form.component';
+import { GitComponent } from './components/git/git.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewsComponent,
     HomeComponent,
-    FormComponent
+    FormComponent,
+    GitComponent
   ],
   imports: [
     BrowserModule,
