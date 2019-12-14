@@ -1,6 +1,5 @@
 <h2 class='header'>5.angular表单 Dom获取表单值 以及双休数据绑定</h2>
 <li class="header">以下块为form组件</li>
-
 <h3 class="title">人員登記系統</h3>
 <div class="people_list"></div>
 <div nz-row>
@@ -50,12 +49,10 @@
         备注：
     </div>
     <div style=" line-height   : 32px;">
-
         <div nz-col nzSpan="3">
-            <textarea nz-input [(ngModel)]="peoplelist.remark" [nzAutosize]="true"
+            <textarea nz-input [(ngModel)]="peoplelist.remark" [nzAutosize]="{ minRows: 2, maxRows: 6 }"
                 placeholder="请输入备注"></textarea>
         </div>
-
     </div>
 </div>
 <br>
@@ -68,25 +65,3 @@
 <pre style="text-align: left;">
     {{peoplelist | json}}
 </pre>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
