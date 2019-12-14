@@ -1,0 +1,14 @@
+.title {
+    text-align: center;
+}
+
+.textdisplay {
+    text-align    : right;
+    line-height   : 32px;
+    vertical-align: middle;
+}
+
+nz-select {
+    margin-right: 8px;
+    width       : 120px;
+}
