@@ -1,0 +1,59 @@
+<h2 class='header'>6.完整的toDoList（待办事项） 以及类似京东App搜索缓存数据功能</h2>
+<li class="header">以下块为to-do-list组件</li>
+<h3>1、京东搜索缓存数据功能</h3>
+
+<div nz-row>
+    <div nz-col nzSpan="6" nzOffset='9'>
+        <nz-input-group nzSearch nzSize="large" [nzAddOnAfter]="suffixButton">
+            <input type="text" nz-input placeholder="请输入搜索内容" [(ngModel)]="keyWords" (keyup)='keyup($event)' />
+        </nz-input-group>
+        <ng-template #suffixButton>
+            <button nz-button nzType="primary" nzSize="large" nzSearch (click)="doSearch()">搜索</button>
+        </ng-template>
+    </div>
+</div>
+<div nz-row>
+    <div nz-col nzSpan="6" nzOffset='9'>
+        <nz-list [nzDataSource]="historyList" nzBordered [nzRenderItem]="defaultItem">
+            <ng-template #defaultItem let-item>
+                <nz-list-item *ngFor="let item of historyList">
+                    <span></span>
+                    {{item}}
+                </nz-list-item>
+            </ng-template>
+        </nz-list>
+    </div>
+</div>
+
+
+
+
+
+
+<br>
+<h3>2、toDoList（待办事项）功能</h3>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
