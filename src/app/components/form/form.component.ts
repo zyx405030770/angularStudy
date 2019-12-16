@@ -24,7 +24,7 @@ export class FormComponent implements OnInit {
       checked: true,
     }],
     remark: ''
-  }
+  };
   radioValue = 'A';
 
   constructor() { }
@@ -33,6 +33,6 @@ export class FormComponent implements OnInit {
   }
 
   getValue() {
-    console.log(this.peoplelist)
+    console.log(this.peoplelist);
   }
 }
