@@ -16,15 +16,17 @@
     <div nz-col nzSpan="6" nzOffset='9'>
         <nz-list [nzDataSource]="historyList" nzBordered [nzRenderItem]="defaultItem">
             <ng-template #defaultItem let-item>
-                <nz-list-item *ngFor="let item of historyList">
-                    <span></span>
-                    {{item}}
+                <nz-list-item *ngFor="let item of historyList;let i=index;">
+                    {{item}} <button nz-button nzType="primary" nzShape="round" (click)="deleteHistory(i)"><i nz-icon
+                            nzType="delete" nzTheme="outline"></i></button>
                 </nz-list-item>
             </ng-template>
         </nz-list>
     </div>
 </div>
-
+{{keyWords | json}}
+<br>
+{{historyList | json }}
 
 
 
