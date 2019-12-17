@@ -35,7 +35,6 @@ export class ToDoListComponent implements OnInit {
   }
 
   deleteHistory(key) {
-    alert(key);
     this.historyList.splice(key, 1);
   }
 }
