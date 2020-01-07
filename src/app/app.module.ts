@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { ToDoListComponent } from './components/to-do-list/to-do-list.component';
+import { EmptyComponent } from './components/empty/empty.component';
 
 registerLocaleData(zh);
 
@@ -25,6 +26,7 @@ registerLocaleData(zh);
     HomeComponent,
     FormComponent,
     ToDoListComponent,
+    EmptyComponent,
   ],
   imports: [
     BrowserModule,

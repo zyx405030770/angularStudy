@@ -15,7 +15,7 @@ import { Title } from '@angular/platform-browser';
 export class ToDoListComponent implements OnInit {
 
   keyWords: any = '';
-  historyList: any = ['']; //怎样在列表初始化为空的时候实现功能？
+  historyList: any = ['']; // 怎样在列表初始化为空的时候实现功能？
 
   constructor(public msg: NzMessageService) { }
 
