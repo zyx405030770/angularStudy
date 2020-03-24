@@ -15,6 +15,8 @@ import { Title } from '@angular/platform-browser';
 export class ToDoListComponent implements OnInit {
 
   keyWords: any = '';
+  keywords: any = '';
+  toDo: any[] = [];
   historyList: any = ['']; // 怎样在列表初始化为空的时候实现功能？
 
   constructor(public msg: NzMessageService) { }
@@ -23,18 +25,38 @@ export class ToDoListComponent implements OnInit {
   }
 
   doSearch() {
-    if (this.historyList.indexOf(this.keyWords) == -1) {
+    if (this.historyList.indexOf(this.keyWords) === -1) {
       this.historyList.push(this.keyWords);
-    } this.keyWords = '';
+    }
+    this.keyWords = '';
   }
 
   keyup(e) {
     if (e.key == 'Enter') {
-      this.doSearch()
+      this.doSearch();
     }
   }
 
   deleteHistory(key) {
     this.historyList.splice(key, 1);
   }
+
+  addToDo(e) {
+    if (e.keyCode == 13) {
+      this.toDo.push({
+        title: this.keywords,
+        status: 0
+      });
+      this.keywords = '';
+    }
+  }
+
+  changeStatus() {
+
+  }
+
+  onClick() {
+
+  }
+
 }

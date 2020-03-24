@@ -28,10 +28,24 @@
 <br>
 {{historyList | json }}
 
-
-
-
-
-<br>
 <h3>2、toDoList（待办事项）功能</h3>
+<pre>{{toDo|json}}</pre>
+<div nz-row>
+    <div nz-col nzSpan="5" nzOffset='10'>
+        <input nz-input [(ngModel)]="keywords" (keyup)='addToDo($event)' name="toDo" placeholder="添加代办事项">
+    </div>
+</div>
+<div nz-row>
+    <div nz-col nzSpan="5" nzOffset='10'>
+        <h3>代办事项</h3>
+        <ul>
+            <li *ngFor="let item of toDo">
+                <input type="checkbox" name="to_do_list" (click)="changeStatus()">{{item.title}}-----<button
+                    (click)="onClick()">X</button>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
 <br>
